@@ -9,7 +9,7 @@ import random
 from datetime import date
 from utils import get_days_to_xmas, buffer_digit
 
-SEC_BETWEEN_SCROLLING_MESSAGE = 60
+SEC_BETWEEN_SCROLLING_MESSAGE = 4
 
 # Setup segment display
 device_scroll = seg.sevensegment(cascaded=2)
@@ -21,9 +21,9 @@ messages = [
   "HO HO HO",
   "NOEL NOEL NOEL",
   "SANTA STOP HERE",
-  "ROWAN IS ON THE GOOD LIST",
+  "OUR LITTLE BOY IS ON THE NICE LIST",
   "JINGLE BELLS",
-  "LYNN IS THE BEST MOM"
+  "LYNN IS THE BEST"
 ]
 
 def show_days_message(device, deviceId, days: str, dot_on: bool):
