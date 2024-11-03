@@ -9,7 +9,7 @@ import random
 from datetime import date
 from utils import get_days_to_xmas, buffer_digit
 
-SEC_BETWEEN_SCROLLING_MESSAGE = 4
+SEC_BETWEEN_SCROLLING_MESSAGE = 60
 
 # Setup segment display
 device_scroll = seg.sevensegment(cascaded=2)
@@ -38,6 +38,7 @@ def show_days_message(device, deviceId, days: str, dot_on: bool):
 
 # Main loop
 counter_for_intermittent_message = 0
+message_pos = 0
 try:
     while True:
         days_to_xmas = get_days_to_xmas(date.today())
@@ -48,8 +49,11 @@ try:
         sleep(1)
         counter_for_intermittent_message += 2 # 2 sec passed
         if counter_for_intermittent_message >= SEC_BETWEEN_SCROLLING_MESSAGE:
-            device_scroll.show_message(random.choice(messages), delay = 0.2)
+            device_scroll.show_message(messages[message_pos], delay = 0.2)
             counter_for_intermittent_message = 0
+            message_pos += 1
+            if message_pos >= len(messages):
+                message_pos = 0
 
 except KeyboardInterrupt:
     device_scroll.clear()
