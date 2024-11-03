@@ -1,0 +1,3 @@
+RPi.GPIO==0.7.1
+spidev==3.6
+ZeroSeg==0.0.2
