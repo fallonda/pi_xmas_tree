@@ -40,4 +40,19 @@ The ZeroSeg [README](https://github.com/AverageMaker/ZeroSeg/blob/master/README.
 
 Your virtual environment should have everything it needs now to run the display and any scripts in this repo. 
 
+# Running notes
 
+* To run tests, activate .venv and run `python3 -m pytest tests`. 
+* `./run_xmastree.sh` is a simple bash script to run both the lights and the display as separate background python processes. This is used by crontab.
+
+Line added to crontab: 
+
+```bash
+@reboot /home/pi/pi_xmas_tree/run_xmastree.sh
+```
+
+__Happy Holidays!__
+
+***
+
+END.

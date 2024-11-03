@@ -73,6 +73,12 @@ except KeyboardInterrupt:
     for bulb in list_of_bulbs:
         bulb.stop()
 
+finally:
+    # Turn off all bulbs
+    io.output(pin_list, 0)
+    for bulb in list_of_bulbs:
+        bulb.stop()
+
 # End.
 
 

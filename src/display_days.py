@@ -55,4 +55,8 @@ except KeyboardInterrupt:
     device_scroll.clear()
     device_static.clear()
 
+finally:
+    device_scroll.clear()
+    device_static.clear()
+    
 # End.
