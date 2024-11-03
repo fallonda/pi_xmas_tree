@@ -2,14 +2,14 @@
 
 # Script to run countdown to Christmas Day on the 
 # 7-seg display. 
-# Output will be "XXX DAYS"
+# Output will be "123 DAYS"
 
 # Environment setup
 from time import sleep
 import ZeroSeg.led as seg
 import random
 from datetime import date
-from utils import get_days_to_xmas
+from utils import get_days_to_xmas, buffer_digit
 
 # Setup segment display
 device_scroll = seg.sevensegment(cascaded=2)

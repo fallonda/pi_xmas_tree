@@ -18,11 +18,13 @@ def get_days_to_xmas(current_date: date) -> int:
 
 def buffer_digit(input_digit: int) -> str: 
     """Buffer the days with a space before hand if they are 
-         less than three digits long."""  
-       input_digit_as_str = str(input_digit) 
-       if len(input_digit_as_str) > 3: 
-           raise ValueError("digit input should not be greater than len 3.") 
-       while len(input_digit_as_str) < 3: 
-           input_digit_as_str = "" + input_digit_as_str 
-       return input_digit_as_str 
+    less than three digits long."""  
+    if not isinstance(input_digit, int):
+        raise ValueError("Input to buffer_digit must be int")
+    input_digit_as_str = str(input_digit) 
+    if len(input_digit_as_str) > 3: 
+        raise ValueError("digit input should not be greater than len 3.") 
+    while len(input_digit_as_str) < 3: 
+        input_digit_as_str = " " + input_digit_as_str 
+    return input_digit_as_str 
 
